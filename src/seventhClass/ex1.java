@@ -5,7 +5,6 @@ import java.util.*;
 public class ex1 {
     public static int N,M;
     public static int [][] graph = new int [200][200];
-
     public static int dx[] = {-1, 1, 0, 0};
     public static int dy[] = {0, 0, -1, 1};
 
@@ -15,12 +14,14 @@ public class ex1 {
         M = scanner.nextInt();
         scanner.nextLine();
         System.out.println("n " + N + "m" + M);
+
         for(int i=0; i <N; i++){
             String str = scanner.nextLine();
             for(int j=0; j<M; j++){
                 graph[i][j] = str.charAt(j) - '0';
             }
         }
+
         scanner.close();
         System.out.println(" result = " + bfs(0, 0));
     }
@@ -29,9 +30,11 @@ public class ex1 {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(x,y));
         while(!queue.isEmpty()){
+
             Node node = queue.poll();
             x = node.getX();
             y = node.getY();
+
             for(int i=0;i<4;i++){
                 int nx = x + dx[i];
                 int ny = y + dy[i];
@@ -48,6 +51,7 @@ public class ex1 {
     static class Node{
         final private int x;
         final private int y;
+
         Node(int x, int y){
             this.x = x;
             this.y = y;

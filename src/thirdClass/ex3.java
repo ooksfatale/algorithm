@@ -16,7 +16,6 @@ public class ex3 {
 
         Arrays.sort(arr);
 
-
         for(int num : arr){
             sum+=num;
             result+=sum;
